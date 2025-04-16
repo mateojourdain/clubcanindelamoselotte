@@ -1,0 +1,149 @@
+/* theme de base*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* fond */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0069e3;
+    font-family: "Open Sans", sans-serif;
+    overflow-y: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+
+
+form {
+    width: 100%;
+    max-width: 28rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3391f0;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    text-decoration: none;
+}
+
+button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+.send-icon {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.retour {
+    width: 180px;
+    height: 60px;
+    background-color: #3391f0;
+    line-height: 18px;
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+}
+
+.retour:hover {
+    cursor: pointer;
+    background-color: #3391f0;
+
+}

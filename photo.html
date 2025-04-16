@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Photos</title>
+    <link rel="stylesheet" href="photo.css">
+    <!-- icon navbar -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- police d'ecriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- sidebar version ordinateur -->
+    <div class="sidebar">
+        <div class="logo_content">
+            <img src="media/paw.png" alt="" id="toggleSidebar">
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="Index.html"><i class="bx bxs-home" undefined></i>
+                    <span class="links_name">Accueil</span>
+                </a>
+                <span class="tooltip">Accueil</span>
+            </li>
+            <li>
+                <a href="activites.html"><i class='bx bxs-dog'></i>
+                    <span class="links_name">Activités</span>
+                </a>
+                <span class="tooltip">Activités</span>
+            </li>
+            <li>
+                <a href="localisation.html"><i class='bx bxs-map'></i>
+                    <span class="links_name">Localisation & Horaires</span>
+                </a>
+                <span class="tooltip">Localisation & Horaires</span>
+            </li>
+            <li>
+                <a href="evenements.html"><i class='bx bx-calendar'></i>
+                    <span class="links_name">Evènements</span>
+                </a>
+                <span class="tooltip">Evènements</span>
+            </li>
+            <li>
+                <a href="photo.html"><i class='bx bxs-camera'></i>
+                    <span class="links_name">Galerie photos</span>
+                </a>
+                <span class="tooltip">Galerie photos</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- faire fonctionner la patte de chien -->
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const toggleBtn = document.querySelector("#toggleSidebar");
+        const overlay = document.querySelector(".overlay");
+
+        toggleBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+        };
+
+        overlay.onclick = function () {
+            sidebar.classList.remove("active");
+            overlay.style.display = "none";
+        };
+    </script>
+
+
+
+    <!-- pied de page  -->
+    <footer class="footer">
+        <!-- Toggle button -->
+        <div class="footer-toggle" onclick="toggleFooter()">
+            <span>Informations légales</span>
+            <i id="arrow" class='bx bx-chevron-right'></i>
+        </div>
+
+        <!-- Footer content - hidden by default -->
+        <div class="footer-content">
+            <!-- Section réseaux sociaux -->
+            <div class="footer-social">
+                <h3>REJOIGNEZ-NOUS SUR NOS RÉSEAUX SOCIAUX</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Liens légaux en colonnes -->
+            <div class="legal-navigation">
+                <div class="legal-buttons">
+                    <button class="legal-button" onclick="showTab('editeur')">
+                        <i class="fas fa-info-circle"></i>
+                        <span>ÉDITEUR DU SITE</span>
+                    </button>
+
+                    <button class="legal-button" onclick="showTab('propriete')">
+                        <i class="fas fa-file-alt"></i>
+                        <span>PROPRIÉTÉ INTELLECTUELLE</span>
+                    </button>
+
+                    <button class="legal-button" onclick="showTab('cookies')">
+                        <i class="fas fa-cookie-bite"></i>
+                        <span>COOKIES</span>
+                    </button>
+
+                    <button class="legal-button" onclick="showTab('hebergement')">
+                        <i class="fas fa-code"></i>
+                        <span>HÉBERGEMENT</span>
+                    </button>
+
+                    <button class="legal-button" onclick="showTab('donnees')">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>DONNÉES PERSONNELLES</span>
+                    </button>
+
+                    <button class="legal-button" onclick="showTab('responsabilite')">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>RESPONSABILITÉ</span>
+                    </button>
+                </div>
+
+                <!-- Tab content -->
+                <div class="tab-content-container">
+                    <div id="editeur" class="tab-content">
+                        <h3>Éditeur du site</h3>
+                        <p>Le présent site est édité par l'association Club Canin de la Moselotte, déclarée sous le
+                            numéro RNA [indiquer un numéro] et immatriculée sous le numéro SIRET [indiquer le SIRET si
+                            applicable].</p>
+                        <ul>
+                            <li><i class="fas fa-info-circle"></i> Siège social : [adresse]</li>
+                            <li><i class="fas fa-envelope"></i> Email : [email]</li>
+                            <li><i class="fas fa-phone"></i> Téléphone : [numéro]</li>
+                            <li><i class="fas fa-user"></i> Directeur de la publication : [nom du président de
+                                l'association]</li>
+                        </ul>
+                    </div>
+
+                    <div id="hebergement" class="tab-content">
+                        <h3>Hébergement</h3>
+                        <p>Le site est hébergé par GitHub Pages, un service de pages statiques proposé par GitHub, Inc.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> Adresse : 88 Colin P. Kelly Jr. Street, San
+                                Francisco, CA 94107, USA</li>
+                            <li><i class="fas fa-globe"></i> Site web : GitHub Pages</li>
+                        </ul>
+                    </div>
+
+                    <div id="propriete" class="tab-content">
+                        <h3>Propriété intellectuelle</h3>
+                        <p>L'ensemble du contenu du site (textes, images, logos, etc.) est la propriété exclusive du
+                            Club Canin de la Moselotte, sauf mention contraire. Toute reproduction, distribution ou
+                            utilisation sans autorisation est strictement interdite.</p>
+                    </div>
+
+                    <div id="donnees" class="tab-content">
+                        <h3>Données personnelles</h3>
+                        <ul>
+                            <li>Le site ne collecte aucune donnée personnelle sans votre consentement.</li>
+                            <li>Les informations transmises via le formulaire de contact sont utilisées uniquement pour
+                                répondre à vos demandes et sont supprimées après un délai de [préciser la durée, ex. 6
+                                mois].</li>
+                            <li>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
+                                suppression de vos données. Vous pouvez exercer ces droits en nous contactant à [email
+                                spécifique RGPD].</li>
+                        </ul>
+                    </div>
+
+                    <div id="cookies" class="tab-content">
+                        <h3>Cookies</h3>
+                        <p>Ce site n'utilise pas de cookies à des fins de suivi ou de publicité.</p>
+                    </div>
+
+                    <div id="responsabilite" class="tab-content">
+                        <h3>Responsabilité</h3>
+                        <p>Le Club Canin de la Moselotte s'efforce d'assurer l'exactitude des informations diffusées sur
+                            ce site, mais ne peut garantir leur complétude ou leur actualité. L'association décline
+                            toute responsabilité quant à l'utilisation des informations présentes sur ce site.</p>
+                        <p>Le site peut contenir des liens externes vers des sites tiers dont nous ne sommes pas
+                            responsables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crédits et copyright -->
+            <div class="credits">
+                <p>Site conçu et développé par Matéo Jourdain — Design & Développement Web.</p>
+                <p>© 2025 Club Canin de la Moselotte. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle footer expansion
+        function toggleFooter() {
+            document.querySelector('.footer').classList.toggle('expanded');
+            const arrow = document.getElementById("arrow");
+            arrow.classList.toggle("rotate");
+        }
+
+        // Show tab content
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.style.display = 'none';
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.legal-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
+
+            // Add active class to clicked button
+            const activeButton = document.querySelector(`.legal-button[onclick="showTab('${tabId}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        // Initialize: hide all tabs initially except the first one
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

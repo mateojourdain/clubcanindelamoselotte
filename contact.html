@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evènements</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- icon navbar -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- police d'ecriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Contactez-nous</h1>
+        </div>
+
+        <form id="contactForm" action="https://api.emailjs.com/api/v1.0/email/send" method="POST">
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Votre message"></textarea>
+            </div>
+
+            <button type="submit">
+                <span class="send-icon">➤</span>
+                Envoyer
+            </button>
+        </form>
+    </div>
+
+    <a href="index.html">
+        <button class="retour">Retour à la page d'accueil</button></a>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialise EmailJS avec TA clé publique
+            emailjs.init("IQP9o_7LotoXwXXSZ");
+
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                emailjs.sendForm('service_a22586t', 'template_xdopcai', this)
+                    .then(function () {
+                        alert("Message envoyé !");
+                        //   ramene a la page accueil apres envoie du fichier
+                        window.location.href = "index.html";
+                    }, function (error) {
+                        alert("Erreur lors de l'envoi : " + JSON.stringify(error));
+                    });
+            });
+        });
+    </script>
+
+</body>
