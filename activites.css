@@ -280,7 +280,6 @@ body {
 
 .title {
     margin-top: 1rem;
-    margin-bottom: 3rem;
     color: #ffffff;
     font-size: 24px;
     font-weight: 400;
@@ -291,7 +290,7 @@ body {
     height: 100vh;
     margin-left: 100px;
     margin-right: 22px;
-    margin-top: 3rem;
+    margin-top: 1rem;
     background: #0069e3;
 }
 
@@ -631,4 +630,11 @@ body {
     .footer.expanded {
         max-height: 90vh;
     }
+}
+
+.image-placeholder {
+    width: 500px; /* Largeur de l'image d'origine */
+    height: 750px; /* Hauteur de l'image d'origine */
+    background-color: white; /* Couleur blanche */
+    /* Ajoutez d'autres propriétés CSS si nécessaire pour correspondre à l'image */
 }
