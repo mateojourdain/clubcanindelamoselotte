@@ -78,7 +78,6 @@
         </ul>
     </div>
 
-    <!-- faire fonctionner la patte de chien -->
     <script>
         const sidebar = document.querySelector(".sidebar");
         const toggleBtn = document.querySelector("#toggleSidebar");
@@ -98,56 +97,71 @@
 
     <!-- partie principal de la page -->
 
-    <h2 class="title">Nos activitées</h2>
+    <h2 class="title">Nos activités</h2>
     <div class="gallery-container">
         <div class="image-scroller">
             <div class="image-card">
-                <div class="image-placeholder"></div>
+                <img class="image-placeholder" src="education 2.jpg" alt="Education">
+                <h3>L'éducation</h3>
                 <div class="image-description">
-                    <h3>Education</h3>
-                    <p>Voici un texte type qui servirai de presentation de l'activité </p>
+                    <p>Pour avoir à ses côtés un "bon" chien, que l'on pourra emmener partout. Il faut qu'il soit bien
+                        éduqué. Pour cela, il va falloir apprendre au chiot sans tarder les ordres de base et travailler
+                        sa socialisation. <br>
+                        Pour ce qui est des chiens adultes, comme ceux adoptés par exemple, il n'est pas trop tard pour
+                        reprendre à zéro leur éducation et leur apprendre tout ce qu'ils n'ont pas eu la chance de vivre
+                        auparavant. Cela peut mettre davantage de temps mais rien n'est perdu ni n'est définitif.</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder"></div>
+                <img class="image-placeholder" src="obé 2.jpg" alt="Obéissance">
+                <h3>L'obéissance</h3>
                 <div class="image-description">
-                    <h3>Obeissance</h3>
-                    <p>Voici un texte type qui servirai de presentation de l'activité</p>
+                    <p>L’Obéissance est un sport canin où le chien doit obéir aux commandements, montrer son
+                        enthousiasme et de la rapidité dans l'exécution.
+                        L'obéissance peut être pratiquée par toute personne possédant un chien sociable, quelle que soit
+                        sa race ou ses origines. Elle révèle la complicité du chien avec son maître et met en valeur ses
+                        qualités naturelles. La plupart des races canines y ont accès, l'âge des chiens pour la
+                        présentation est de 12 mois.
+                    </p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder"></div>
+                <img class="image-placeholder" src="agility1.jpg" alt="Agility">
+                <h3>L'agility</h3>
                 <div class="image-description">
-                    <h3>Agility</h3>
-                    <p>Voici un texte type qui servirai de presentation de l'activité</p>
+                    <p>L’ Agility est un sport canin amusant qui implique une coordination parfaite entre le chien et
+                        son maître. Il s'agit d'un parcours d'obstacles chronométré où le chien doit passer à travers
+                        différents obstacles dans un ordre spécifique et selon les indications de son maître.</p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder"></div>
+                <img class="image-placeholder" src="chiens-visiteurs1.jpg" alt="Chiens Visiteurs">
+                <h3>Les chiens Visiteurs</h3>
                 <div class="image-description">
-                    <h3>Chiens Visiteurs</h3>
-                    <p>Voici un texte type qui servirai de presentation de l'activité</p>
+                    <p>Le chien visiteur, c'est un chien (diplômé) qui vient visiter des personnes coincées derrière les
+                        murs (ceux de la vieillesse, de la maladie, du handicap, des prisons) mais aussi des enfants
+                        scolarisés à fin d'information et de prévention des morsures .... <br>
+                        Le chien visiteur apporte toujours une distraction, mais aussi un contact, un réconfort, un
+                        regard sans jugement. Le chien visiteur permet parfois de briser ces murs, facilite les
+                        mouvements, la parole.
+                    </p>
                 </div>
             </div>
             <div class="image-card">
-                <div class="image-placeholder"></div>
+                <img class="image-placeholder" src="troupeau1.jpg" alt="Troupeau">
+                <h3>Les chien de troupeau</h3>
                 <div class="image-description">
-                    <h3>Toupeau</h3>
-                    <p>Voici un texte type qui servirai de presentation de l'activité</p>
+                    <p>Il consiste pour le chien à mener un troupeau sous les ordres de son maître. L'objectif de cette
+                        discipline est de mettre en valeur les capacités innées des races de chiens de berger à conduire
+                        et diriger des troupeaux qu'ils soient ovins (moutons), bovins (vaches) ou caprins (chèvres).
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.image-card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('active');
-            });
-        });
-    </script>
+    
 
-    <!-- pied de page  -->
     <!-- pied de page  -->
     <footer class="footer">
         <!-- Toggle button -->
@@ -210,7 +224,8 @@
                     <div id="editeur" class="tab-content">
                         <h3>Éditeur du site</h3>
                         <p>Le présent site est édité par l'association Club Canin de la Moselotte, déclarée sous le
-                            numéro RNA [indiquer un numéro] et immatriculée sous le numéro SIRET [indiquer le SIRET si
+                            numéro RNA [indiquer un numéro] et immatriculée sous le numéro SIRET [indiquer le SIRET
+                            si
                             applicable].</p>
                         <ul>
                             <li><i class="fas fa-info-circle"></i> Siège social : [adresse]</li>
@@ -223,7 +238,8 @@
 
                     <div id="hebergement" class="tab-content">
                         <h3>Hébergement</h3>
-                        <p>Le site est hébergé par GitHub Pages, un service de pages statiques proposé par GitHub, Inc.
+                        <p>Le site est hébergé par GitHub Pages, un service de pages statiques proposé par GitHub,
+                            Inc.
                         </p>
                         <ul>
                             <li><i class="fas fa-map-marker-alt"></i> Adresse : 88 Colin P. Kelly Jr. Street, San
@@ -243,10 +259,14 @@
                         <h3>Données personnelles</h3>
                         <ul>
                             <li>Le site ne collecte aucune donnée personnelle sans votre consentement.</li>
-                            <li>Les informations transmises via le formulaire de contact sont utilisées uniquement pour
-                                répondre à vos demandes.</li>
+                            <li>Les informations transmises via le formulaire de contact sont utilisées uniquement
+                                pour
+                                répondre à vos demandes et sont supprimées après un délai de [préciser la durée, ex.
+                                6
+                                mois].</li>
                             <li>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
-                                suppression de vos données. Vous pouvez exercer ces droits en nous contactant à [email
+                                suppression de vos données. Vous pouvez exercer ces droits en nous contactant à
+                                [email
                                 spécifique RGPD].</li>
                         </ul>
                     </div>
@@ -258,7 +278,8 @@
 
                     <div id="responsabilite" class="tab-content">
                         <h3>Responsabilité</h3>
-                        <p>Le Club Canin de la Moselotte s'efforce d'assurer l'exactitude des informations diffusées sur
+                        <p>Le Club Canin de la Moselotte s'efforce d'assurer l'exactitude des informations diffusées
+                            sur
                             ce site, mais ne peut garantir leur complétude ou leur actualité. L'association décline
                             toute responsabilité quant à l'utilisation des informations présentes sur ce site.</p>
                         <p>Le site peut contenir des liens externes vers des sites tiers dont nous ne sommes pas
@@ -315,6 +336,19 @@
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(tab => {
                 tab.style.display = 'none';
+            });
+        });
+
+        document.querySelectorAll('.image-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Désactive toutes les autres cartes
+                document.querySelectorAll('.image-card').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                // Active/désactive la carte cliquée
+                card.classList.toggle('active');
             });
         });
     </script>

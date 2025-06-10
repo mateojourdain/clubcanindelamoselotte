@@ -22,20 +22,21 @@ body {
 
 .container {
     min-height: 100vh;
-    min-width: 500px;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2.5rem;
+    padding: 1rem;
 }
 
 .header {
     text-align: center;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    width: 100%;
 }
-
-
 
 h1 {
     font-size: 1.875rem;
@@ -44,15 +45,14 @@ h1 {
     color: #ffffff;
 }
 
-
-
 form {
     width: 100%;
-    max-width: 28rem;
+    max-width: 50rem;
     background: white;
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 .form-group {
@@ -115,9 +115,10 @@ button:disabled {
     font-size: 0.875rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .container {
-        padding: 2rem 1rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     h1 {
@@ -125,7 +126,57 @@ button:disabled {
     }
 
     form {
+        padding: 1.25rem;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    form {
         padding: 1rem;
+        margin: 0 0.5rem;
+        border-radius: 0.375rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.75rem;
+        font-size: 16px;
+        /* Évite le zoom sur iOS */
+    }
+
+    button {
+        padding: 0.875rem;
+    }
+
+    .retour {
+        width: 160px;
+        height: 50px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0.25rem;
+    }
+
+    form {
+        padding: 0.75rem;
+        margin: 0 0.25rem;
+    }
+
+    h1 {
+        font-size: 1.125rem;
     }
 }
 
@@ -134,16 +185,33 @@ a {
 }
 
 .retour {
-    width: 180px;
-    height: 60px;
-    background-color: #3391f0;
-    line-height: 18px;
+    background: linear-gradient(135deg, #3391F0, #0069e3);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    min-height: 50px;
     margin-bottom: 2.5rem;
     border-radius: 12px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .retour:hover {
-    cursor: pointer;
-    background-color: #3391f0;
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
 
+.retour:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }

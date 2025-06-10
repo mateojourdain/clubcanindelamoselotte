@@ -109,6 +109,16 @@ body {
         white-space: nowrap;
     }
 
+    /* Transition douce */
+    .nav_list li a {
+        transition: background-color 0.3s;
+    }
+
+    /* Appliquer le hover UNIQUEMENT quand la sidebar est ouverte (classe .active) */
+    .sidebar.active .nav_list li:hover a {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
     .sidebar ul li a i {
         height: 50px;
         min-width: 50px;
@@ -279,85 +289,128 @@ body {
 /* Gallery Container */
 
 .title {
-    margin-top: 1rem;
-    color: #ffffff;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    color: white;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .gallery-container {
+    width: 100%;
+    height: calc(100vh - 120px);
     display: flex;
-    height: 100vh;
-    margin-left: 100px;
-    margin-right: 22px;
-    margin-top: 1rem;
-    background: #0069e3;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Image Scroller */
 .image-scroller {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    justify-content: flex-start;
     gap: 20px;
-    padding: 0 60px;
-    scrollbar-width: thin;
-    scrollbar-color: #3391F0 #0069e3;
-    max-width: 100vw;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-left: 100px;
 }
-
-.image-scroller::-webkit-scrollbar {
-    height: 6px;
-}
-
-.image-scroller::-webkit-scrollbar-track {
-    background: #3391F0;
-    border-radius: 10px;
-}
-
 
 /* Image Card */
 .image-card {
-    scroll-snap-align: center;
-    flex: 0 0 auto;
+    flex: 1;
+    max-width: 250px;
+    height: 100%;
     position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
     overflow: hidden;
-    width: 226px;
-    height: 405px;
+    border-radius: 8px;
 }
-
 
 .image-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all 0.5s ease;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-.image-card.active img {
-    filter: brightness(0.6) blur(2px);
+.image-card img:hover {
+    cursor: pointer;
+}
+
+.image-card:hover img {
+    filter: brightness(0.85) blur(2px);
+}
+
+/* Titre h3 toujours visible sur l'image */
+.image-card h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 600;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    margin: 0;
+}
+
+/* Masquer le titre quand la carte est active */
+.image-card:hover h3 {
+    opacity: 0;
 }
 
 /* Image Description */
 .image-description {
     position: absolute;
-    background-color: #3391F0;
     bottom: -100%;
     left: 0;
     width: 100%;
-    padding: 25px 20px;
-    transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 0 0 10px 10px;
-    opacity: 0;
+    padding: 15px;
+    color: white;
+    transition: bottom 0.3s ease;
+    border-radius: 0 0 8px 8px;
 }
 
-.image-card.active .image-description {
+/* Afficher la description quand la carte est active */
+.image-card:hover .image-description {
     bottom: 0;
+}
+
+/* Ajout d'un overlay sombre */
+.image-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+.image-card:hover::after {
+    opacity: 1;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Effet de flou avec bords arrondis */
+.image-card.active .image-placeholder {
+    border-radius: 8px;
+}
+
+.image-card:hover .image-description {
     opacity: 1;
 }
 
@@ -366,6 +419,8 @@ body {
     color: #ffffff;
     margin-bottom: 10px;
     font-weight: 600;
+    display: none;
+    /* Masquer le h3 dans la description */
 }
 
 .image-description p {
@@ -380,30 +435,90 @@ body {
     opacity: 1;
 }
 
-
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .image-scroller {
-        padding: 20px;
-        gap: 15px;
-    }
+/* Media queries pour différentes tailles d'écran */
+@media (min-width: 1400px) {
 
     .image-card {
-        width: 220px;
-        height: 400px;
-    }
-
-    .image-description h3 {
-        font-size: 1.2rem;
-    }
-
-    .image-description p {
-        font-size: 0.8rem;
+        width: 350px;
     }
 }
 
+@media (max-width: 1200px) {
+    .image-card {
+        width: min(280px, 35vw);
+    }
+}
 
+@media (max-width: 992px) {
+    .image-card {
+        width: min(250px, 40vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .image-card:active img {
+        filter: brightness(0.6) blur(2px);
+    }
+
+    .title {
+        margin-top: 100px;
+    }
+
+    .gallery-container {
+        height: 100% !important;
+        width: 100%;
+        padding: 10px;
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
+
+    .image-scroller {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .image-card {
+        width: 100% !important;
+        max-width: none !important;
+        height: 100% !important;
+        aspect-ratio: 1/1;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-description {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-card {
+        width: min(180px, 50vw);
+    }
+
+    .image-scroller {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        height: calc(100vh - 80px);
+    }
+
+    .image-card {
+        max-width: 150px;
+        height: 250px;
+    }
+}
 
 /* Footer */
 /* Styles du footer pour la version ordinateur */
@@ -630,11 +745,4 @@ body {
     .footer.expanded {
         max-height: 90vh;
     }
-}
-
-.image-placeholder {
-    width: 500px; /* Largeur de l'image d'origine */
-    height: 750px; /* Hauteur de l'image d'origine */
-    background-color: white; /* Couleur blanche */
-    /* Ajoutez d'autres propriétés CSS si nécessaire pour correspondre à l'image */
 }
