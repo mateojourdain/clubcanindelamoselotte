@@ -291,10 +291,11 @@ body {
 /* interieur page d'accueil */
 
 .box {
-    width: 100%;
+    width: calc(100% - 94px);
+    margin-left: 94px;
     max-width: 900px;
-    margin-left: 78px;
     margin-top: 50px;
+    margin-right: 16px;
     border-radius: 12px;
     display: flex;
     background-color: transparent;
@@ -302,12 +303,16 @@ body {
     gap: 2rem;
 }
 
+
 @media (max-width: 768px) {
     .box {
+        margin-top: 100px;
         margin-left: 16px;
         margin-right: 16px;
     }
 }
+
+
 
 
 h2 {
