@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evènements</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="contact.css">
     <!-- icon navbar -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -61,12 +61,12 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Initialise EmailJS avec TA clé publique
-            emailjs.init("QatBWucwHeBFmi9cF4lP0");
+            emailjs.init("N0A3qWxEQVZrgsrVD");
 
             document.getElementById('contactForm').addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                emailjs.sendForm('service_l016wvt', 'template_xdopcai', this)
+                emailjs.sendForm('service_svt16jx', 'template_wc4lk4w', this)
                     .then(function () {
                         alert("Message envoyé !");
                         //   ramene a la page accueil apres envoie du fichier
