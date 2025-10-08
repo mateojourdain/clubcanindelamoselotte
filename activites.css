@@ -289,8 +289,8 @@ body {
 /* Gallery Container */
 
 .title {
-    margin: 10px 0;
-    padding: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
     color: white;
     font-size: 24px;
@@ -302,7 +302,8 @@ body {
     height: calc(100vh - 120px);
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 0;
     box-sizing: border-box;
 }
 
@@ -314,7 +315,7 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
 /* Image Card */
