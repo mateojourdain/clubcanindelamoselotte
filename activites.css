@@ -289,8 +289,8 @@ body {
 /* Gallery Container */
 
 .title {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 10px 0;
+    padding: 10px;
     text-align: center;
     color: white;
     font-size: 24px;
