@@ -296,10 +296,11 @@ body {
     margin-left: 80px;
     flex: 1;
     padding: 3rem;
+    padding-top: 0;
 }
 
 .page-header {
-    margin-top: -2.25rem;
+    margin-top: 0.75rem;
     margin-bottom: 0.75rem;
 }
 
@@ -308,6 +309,7 @@ body {
     padding: 10px;
     text-align: center;
     color: white;
+    font-family: "Open Sans", sans-serif;
     font-size: 24px;
     font-weight: 300;
 }
@@ -405,7 +407,7 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     border: none;
     font-size: 2rem;
@@ -425,7 +427,7 @@ body {
         background: none;
     }
 
-    .lightbox-close{
+    .lightbox-close {
         font-size: 1.25rem;
         top: 1rem;
         right: 1rem;
@@ -433,7 +435,7 @@ body {
         height: 30px;
     }
 
-    
+
 
 }
 
@@ -456,8 +458,7 @@ body {
 @media (max-width: 768px) {
 
     .main-content {
-        margin-left: 200px;
-        padding: 2rem 1rem;
+        padding: 1rem;
     }
 
     .gallery-grid {
@@ -465,9 +466,6 @@ body {
         gap: 1rem;
     }
 
-    .page-header h1 {
-        font-size: 2rem;
-    }
 
 
 }

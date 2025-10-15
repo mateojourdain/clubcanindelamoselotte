@@ -291,10 +291,10 @@ body {
 /* interieur page d'accueil */
 
 .box {
-    width: calc(100% - 94px);
+    width: 100%;
+    margin-top: 2rem;
     margin-left: 94px;
     max-width: 900px;
-    margin-top: 50px;
     margin-right: 16px;
     border-radius: 12px;
     display: flex;
@@ -307,8 +307,8 @@ body {
 @media (max-width: 768px) {
     .box {
         margin-top: 100px;
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -316,17 +316,22 @@ body {
 
 
 h2 {
-    margin-bottom: 1rem;
+    margin-top: -0.25rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    justify-content: center;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     color: #ffffff;
 }
+
+
 
 .glass-panel {
     border-radius: 12px;
     padding: 2rem;
     background-color: #3391F0;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
 }
 
 .map-container {
@@ -370,7 +375,7 @@ h2 {
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); */
     transition: transform 0.2s;
 }
 
